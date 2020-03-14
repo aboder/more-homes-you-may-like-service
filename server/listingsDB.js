@@ -47,7 +47,7 @@ const save = (data) => {
   }).catch((err) => {
     console.log('there was an error: ', err);
   });
-  return promise;
+  return p;
 };
 
 // method to fetch all listings

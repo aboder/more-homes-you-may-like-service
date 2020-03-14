@@ -40,14 +40,14 @@ const save = (data) => {
     reviewCount: data.reviewCount,
   });
 
-  // console.log('about to save this newListing to the db: ', JSON.stringify(newListing));
+  console.log('about to save this newListing to the db: ', JSON.stringify(newListing));
 
-  const promise = newListing.save().then((result) => {
+  const p = newListing.save().then((result) => {
     console.log('saved result: ', result);
   }).catch((err) => {
     console.log('there was an error: ', err);
   });
-  return promise;
+  return p;
 };
 
 // method to fetch all listings

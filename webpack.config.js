@@ -22,5 +22,10 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [
+      '.jsx', '.js'
+    ]
+  },
   mode: 'development' 
 }

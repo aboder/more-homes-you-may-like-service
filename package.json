@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.4"
   },
@@ -20,7 +21,8 @@
   },
   "scripts": {
     "test": "mocha test/* --exit",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "seed": "node server/seed.js --exit"
   },
   "author": "Christopher Tucker",
   "license": "ISC"

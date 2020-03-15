@@ -3,6 +3,7 @@ import _ from 'underscore';
 import OuterCarItem from './OuterCarItem';
 import './OuterCarousel.css';
 
+
 class OuterCarousel extends React.Component {
   constructor(props) {
     super(props)
@@ -20,10 +21,12 @@ class OuterCarousel extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   };
 
+
   getOffset() {
     let { currentIndex } = this.state;
     return currentIndex * -300;
   }
+
 
   slide() {
     let { currentIndex } = this.state;
@@ -35,10 +38,13 @@ class OuterCarousel extends React.Component {
     }
   }
 
+
   clickHandler(e) {
     this.slide();
   }
 
+
+  // creates divs neccessary for nested carousels including buttons (buttons not functional yet)
   render() {
     let { listings, currentIndex } = this.state;
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import OuterCarousel from './OuterCarousel';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)

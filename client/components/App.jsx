@@ -1,4 +1,5 @@
 import React from 'react';
+import OuterCarousel from './OuterCarousel';
 
 class App extends React.Component {
   constructor(props) {
@@ -6,7 +7,12 @@ class App extends React.Component {
   }
 
   render() {
-    return <div>PARENT COMPONENT</div>
+    return (
+    <div>
+      More homes you may like
+      <OuterCarousel />
+    </div>
+    )
   }
 }
 

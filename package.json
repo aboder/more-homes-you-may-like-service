@@ -6,10 +6,13 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "css-loader": "^3.4.2",
     "express": "^4.17.1",
     "mongoose": "^5.9.4",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "style-loader": "^1.1.3",
+    "underscore": "^1.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",

@@ -1,7 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './App';
+import OuterCarousel from './OuterCarousel.jsx';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('This should be true', () => {
 
@@ -17,4 +21,15 @@ describe('This should be true', () => {
   })
 });
 
-// describe('<OuterCarousel /> rendering')
+
+let wrapper;
+
+beforeEach(() => {
+  wrapper = shallow(<OuterCarousel />);
+});
+
+describe('<OuterCarousel /> rendering', () => {
+  it('should render 6 <OuterCarItem />', () => {
+    expect(wrapper.find('OuterCarItem')).toHaveLength(6);
+  });
+});

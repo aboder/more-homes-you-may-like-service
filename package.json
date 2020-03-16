@@ -8,6 +8,8 @@
     "body-parser": "^1.19.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "mongoose": "^5.9.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -21,6 +23,8 @@
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
@@ -40,5 +44,8 @@
     "seed": "node server/seed.js --exit"
   },
   "author": "Christopher Tucker",
-  "license": "ISC"
+  "license": "ISC",
+  "resolutions": {
+    "enzyme-adapter-react-16": "1.11.2"
+  }
 }

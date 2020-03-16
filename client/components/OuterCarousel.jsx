@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import OuterCarItem from './OuterCarItem';
 import './OuterCarousel.css';
+import { Animate } from 'react-rebound';
 
 
 class OuterCarousel extends React.Component {
@@ -18,7 +19,8 @@ class OuterCarousel extends React.Component {
       ],
       currentIndex: 0
     };
-    this.clickHandler = this.clickHandler.bind(this);
+    this.clickHandlerLeft = this.clickHandlerLeft.bind(this);
+    this.clickHandlerRight = this.clickHandlerRight.bind(this);
   };
 
 
@@ -28,41 +30,54 @@ class OuterCarousel extends React.Component {
   }
 
 
-  slide() {
-    let { currentIndex } = this.state;
-    console.log("currentIndex: ", currentIndex);
-    if (currentIndex > 2) {
+  slideRight() {
+    let { currentIndex, listings } = this.state;
+    if (currentIndex > listings.length-4) {
       this.setState({currentIndex: 0});
     } else {
       this.setState({currentIndex: currentIndex+1});
     }
+    console.log("currentIndex: ", currentIndex);
   }
 
-
-  clickHandler(e) {
-    this.slide();
+  slideLeft() {
+    let { currentIndex, listings } = this.state;
+    if (currentIndex === 0) {
+      this.setState({currentIndex: listings.length-3});
+    } else {
+      this.setState({currentIndex: currentIndex-1});
+    }
+    console.log('currentIndex: ', currentIndex);
   }
 
+  clickHandlerRight(e) {
+    this.slideRight();
+  }
+
+  clickHandlerLeft(e) {
+    this.slideLeft();
+  }
 
   // creates divs neccessary for nested carousels including buttons (buttons not functional yet)
   render() {
     let { listings, currentIndex } = this.state;
     return (
       <div className="outerCarouselComponent">
-          <div className="outerLeftButton"></div>
+          <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
             <div className="outerCarousel">
-              <div className="slider" style={{position: "relative", left: this.getOffset()}}>
-                {_.map(listings, (listing, index) => (
-                  <OuterCarItem 
-                  currentIndex={currentIndex}
-                  listing={listing} 
-                  key={JSON.stringify(index)} 
-                  index={index} 
-                  clickHandler={this.clickHandler} />
-                ))}
-              </div>
+              <Animate translateX={this.getOffset()} tension={200} clamp>
+                <div className="slider">
+                  {_.map(listings, (listing, index) => (
+                    <OuterCarItem 
+                    currentIndex={currentIndex}
+                    listing={listing} 
+                    key={JSON.stringify(index)} 
+                    index={index} />
+                  ))}
+                </div>
+              </Animate>
             </div>
-            <div className="outerRightButton"></div>
+            <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
       </div>
     );
   };

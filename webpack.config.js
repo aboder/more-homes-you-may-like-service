@@ -17,14 +17,21 @@ module.exports = {
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react']
             }
-          }
+          },
+        ]
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader', 'css-loader'
         ]
       }
     ]
   },
   resolve: {
     extensions: [
-      '.jsx', '.js'
+      '.jsx', '.js', '.css'
     ]
   },
   mode: 'development' 

@@ -1,5 +1,5 @@
 import React from 'react';
-import OuterCarousel from './OuterCarousel';
+import OuterCarousel from './OuterCarousel.jsx';
 
 
 class App extends React.Component {
@@ -7,12 +7,12 @@ class App extends React.Component {
     super(props)
     this.state = {
       listings: [
-        {id: 0, colors: ['#bbaadd', '#bbddcc', '#aabbdd']},
-        {id: 1, colors: ['#bbaacc', '#bbccaa', '#aaccdd']},
-        {id: 2, colors: ['#bbccdd', '#ccddaa', '#aabbdd']},
-        {id: 3, colors: ['#ccaadd', '#bbddaa', '#aabbcc']},
-        {id: 4, colors: ['#bbaadd', '#bbddcc', '#aaccdd']},
-        {id: 5, colors: ['#bbaacc', '#bbccaa', '#ccbbdd']},
+        {id: 0, images: ['#bbaadd', '#bbddcc', '#aabbdd']},
+        {id: 1, images: ['#bbaacc', '#bbccaa', '#aaccdd']},
+        {id: 2, images: ['#bbccdd', '#ccddaa', '#aabbdd']},
+        {id: 3, images: ['#ccaadd', '#bbddaa', '#aabbcc']},
+        {id: 4, images: ['#bbaadd', '#bbddcc', '#aaccdd']},
+        {id: 5, images: ['#bbaacc', '#bbccaa', '#ccbbdd']}
       ]
     };
   };

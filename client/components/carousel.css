@@ -1,0 +1,92 @@
+.outerCarousel {
+  border: 3px solid black;
+  display: flex;  
+  overflow: hidden;
+  width: 900px;
+}
+
+.outerCarouselComponent {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.outerCarouselItem {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+}
+
+.itemSlider {
+  display: flex;
+  align-content: flex-start;
+}
+
+.outerCarouselItem {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.outerLeftButton {
+  font-size: 100px;
+}
+
+.outerLeftButton::after {
+  content: "⇦";
+}
+
+.outerRightButton {
+  font-size: 100px;
+}
+
+.outerRightButton::after {
+  content: "⇨";
+}
+
+
+/**** innerCarousel ****/
+
+.listingWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.innerCarouselItem {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+}
+
+.leftImageButton {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.leftImageButton::after {
+  content: "⇦";
+}
+
+.rightImageButton {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.rightImageButton::after {
+  content: "⇨";
+}
+
+.heartButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+}
+
+.heartButton::after {
+  content: 'fuckyou'
+}

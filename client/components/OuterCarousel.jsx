@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
 import OuterCarouselItem from './OuterCarouselItem';
-import './OuterCarousel.css';
+import './carousel.css';
 import { Animate } from 'react-rebound';
 
 
@@ -13,7 +13,7 @@ class OuterCarousel extends React.Component {
     };
     this.clickHandlerLeft = this.clickHandlerLeft.bind(this);
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
-  };
+  }
 
   getOffset() {
     let { currentIndex } = this.state;
@@ -28,7 +28,6 @@ class OuterCarousel extends React.Component {
     } else {
       this.setState({currentIndex: currentIndex+1});
     }
-    console.log("currentIndex: ", currentIndex);
   }
 
   slideLeft() {
@@ -39,7 +38,6 @@ class OuterCarousel extends React.Component {
     } else {
       this.setState({currentIndex: currentIndex-1});
     }
-    console.log('currentIndex: ', currentIndex);
   }
 
   clickHandlerRight(e) {
@@ -54,12 +52,13 @@ class OuterCarousel extends React.Component {
   render() {
     let { currentIndex } = this.state;
     let { listings } = this.props;
+    console.log("current component index: ", currentIndex);
     return (
       <div className="outerCarouselComponent">
           <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
             <div className="outerCarousel">
               <Animate translateX={this.getOffset()} tension={200} clamp>
-                <div className="slider">
+                <div className="itemSlider">
                   {_.map(listings, (listing, index) => (
                     <OuterCarouselItem 
                     currentIndex={currentIndex}

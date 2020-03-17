@@ -1,5 +1,5 @@
 import React from 'react';
-import './OuterCarousel.css';
+import './carousel.css';
 import InnerCarousel from './InnerCarousel.jsx';
 
 
@@ -11,10 +11,11 @@ class OuterCarouselItem extends React.Component {
   render() {
     const { listing, index } = this.props;
     return (
-      <span className="outerCarouselItem" style={{background: listing.colors[0]}} >
-        Outer Carousel Item Number {index}
-        <InnerCarousel listing={listing} />
-      </span>
+      <div>
+        <span className="outerCarouselItem">
+          <InnerCarousel listing={listing} />
+        </span>
+      </div>
     );
   };
 };

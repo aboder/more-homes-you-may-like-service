@@ -1,37 +1,28 @@
 import React from 'react';
 import _ from 'underscore';
-import OuterCarItem from './OuterCarItem';
+import OuterCarouselItem from './OuterCarouselItem';
 import './OuterCarousel.css';
 import { Animate } from 'react-rebound';
 
 
 class OuterCarousel extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      listings: [
-        {color: '#bbaadd'},
-        {color: '#bbddaa'},
-        {color: '#aabbdd'},
-        {color: '#aaddbb'},
-        {color: '#ddbbaa'},
-        {color: '#ddaabb'}
-      ],
       currentIndex: 0
     };
     this.clickHandlerLeft = this.clickHandlerLeft.bind(this);
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
   };
 
-
   getOffset() {
     let { currentIndex } = this.state;
     return currentIndex * -300;
   }
 
-
   slideRight() {
-    let { currentIndex, listings } = this.state;
+    const { currentIndex } = this.state;
+    const { listings } = this.props;
     if (currentIndex > listings.length-4) {
       this.setState({currentIndex: 0});
     } else {
@@ -41,7 +32,8 @@ class OuterCarousel extends React.Component {
   }
 
   slideLeft() {
-    let { currentIndex, listings } = this.state;
+    const { currentIndex } = this.state;
+    const { listings } = this.props;
     if (currentIndex === 0) {
       this.setState({currentIndex: listings.length-3});
     } else {
@@ -60,7 +52,8 @@ class OuterCarousel extends React.Component {
 
   // creates divs neccessary for nested carousels including buttons (buttons not functional yet)
   render() {
-    let { listings, currentIndex } = this.state;
+    let { currentIndex } = this.state;
+    let { listings } = this.props;
     return (
       <div className="outerCarouselComponent">
           <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
@@ -68,7 +61,7 @@ class OuterCarousel extends React.Component {
               <Animate translateX={this.getOffset()} tension={200} clamp>
                 <div className="slider">
                   {_.map(listings, (listing, index) => (
-                    <OuterCarItem 
+                    <OuterCarouselItem 
                     currentIndex={currentIndex}
                     listing={listing} 
                     key={JSON.stringify(index)} 
@@ -77,7 +70,7 @@ class OuterCarousel extends React.Component {
                 </div>
               </Animate>
             </div>
-            <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
+          <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
       </div>
     );
   };

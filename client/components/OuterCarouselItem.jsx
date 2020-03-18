@@ -9,13 +9,11 @@ class OuterCarouselItem extends React.Component {
   }
   
   render() {
-    const { listing, index } = this.props;
+    const { listing } = this.props;
     return (
-      <div>
-        <span className="outerCarouselItem">
-          <InnerCarousel listing={listing} />
-        </span>
-      </div>
+      <span className="outerCarouselItem">
+        <InnerCarousel listing={listing} />
+      </span>
     );
   };
 };

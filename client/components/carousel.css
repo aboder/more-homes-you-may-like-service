@@ -1,20 +1,14 @@
-.outerCarousel {
-  border: 3px solid black;
-  display: flex;  
-  overflow: hidden;
-  width: 900px;
-}
-
 .outerCarouselComponent {
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-.outerCarouselItem {
-  display: inline-block;
-  width: 300px;
-  height: 400px;
+.outerCarousel {
+  border: 3px solid black;
+  display: flex;  
+  overflow: hidden;
+  width: 1005px;
 }
 
 .itemSlider {
@@ -23,8 +17,10 @@
 }
 
 .outerCarouselItem {
+  display: inline-block;
+  width: 335px;
+  height: 320px;
   flex-shrink: 0;
-  width: 300px;
 }
 
 .outerLeftButton {
@@ -46,16 +42,35 @@
 
 /**** innerCarousel ****/
 
+.innerCarouselComponent {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .listingWrapper {
   display: flex;
   position: relative;
-  align-items: center;
+}
+
+.innerCarouselSlider {
+  display: flex;
+  align-content: flex-start;
+  position: relative;
 }
 
 .innerCarouselItem {
+  overflow: hidden;
   display: inline-block;
-  width: 300px;
-  height: 400px;
+  width: 335px;
+  height: 320px;
+}
+
+.imageSlider {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
 }
 
 .leftImageButton {
@@ -88,5 +103,5 @@
 }
 
 .heartButton::after {
-  content: 'fuckyou'
+  content: 'heart'
 }

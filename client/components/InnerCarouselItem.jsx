@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './carousel.css';
 
 class InnerCarouselItem extends React.Component {
   constructor(props) {
@@ -7,15 +7,8 @@ class InnerCarouselItem extends React.Component {
   }
 
   render() {
-    let { listing, imageIndex, clickHandlerLeft, clickHandlerRight } = this.props;
     return (
-      <div className="listingWrapper">
-        <div className="innerCarouselItem" style={{background: listing.images[0]}}>
-        </div>
-        <div className="leftImageButton" onClick={clickHandlerLeft}></div>
-        <div className="rightImageButton" onClick={clickHandlerRight}></div>
-        <div className="heartButton"></div>
-      </div>
+      <img className="innerCarouselItem" src="https://via.placeholder.com/335x320.png"></img>
     );
   };
 };

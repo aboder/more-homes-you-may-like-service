@@ -17,7 +17,7 @@ class OuterCarousel extends React.Component {
 
   getOffset() {
     let { currentIndex } = this.state;
-    return currentIndex * -300;
+    return currentIndex * -335;
   }
 
   slideRight() {
@@ -48,11 +48,10 @@ class OuterCarousel extends React.Component {
     this.slideLeft();
   }
 
-  // creates divs neccessary for nested carousels including buttons (buttons not functional yet)
   render() {
     let { currentIndex } = this.state;
     let { listings } = this.props;
-    console.log("current component index: ", currentIndex);
+    // console.log("current component index: ", currentIndex);
     return (
       <div className="outerCarouselComponent">
           <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
@@ -61,10 +60,10 @@ class OuterCarousel extends React.Component {
                 <div className="itemSlider">
                   {_.map(listings, (listing, index) => (
                     <OuterCarouselItem 
-                    currentIndex={currentIndex}
-                    listing={listing} 
-                    key={JSON.stringify(index)} 
-                    index={index} />
+                      currentIndex={currentIndex}
+                      listing={listing} 
+                      key={JSON.stringify(index)} 
+                      index={index} />
                   ))}
                 </div>
               </Animate>

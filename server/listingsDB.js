@@ -40,21 +40,29 @@ const save = (data) => {
     reviewCount: data.reviewCount,
   });
 
-  // console.log('about to save this newListing to the db: ', JSON.stringify(newListing));
 
   const promise = newListing.save().then((result) => {
     console.log('saved result: ', result);
   }).catch((err) => {
     console.log('there was an error: ', err);
   });
-  return p;
+  return promise;
 };
 
 // method to fetch all listings
 const getAllListings = () => Listing.find();
 
+const deleteAllListings = () => {
+  let promise = Listing.deleteMany()
+    .then(console.log("All listings deleted"))
+    .catch((err) => {
+      console.log("There was an error deleting all listings: ", err);
+    });
+  return promise;
+}
 
 module.exports = {
   save,
   getAllListings,
+  deleteAllListings
 };

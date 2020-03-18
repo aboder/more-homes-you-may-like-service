@@ -9,7 +9,7 @@ class InnerCarousel extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentImageIndex: 0,
+      currentImageIndex: 0
     };
     this.clickHandlerLeft = this.clickHandlerLeft.bind(this);
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
@@ -21,7 +21,6 @@ class InnerCarousel extends React.Component {
   }
 
   slideImagesLeft() {
-    console.log('slideImageLeft is firing');
     const { currentImageIndex } = this.state;
     const { images } = this.props.listing;
     if (currentImageIndex === 0) {
@@ -52,12 +51,8 @@ class InnerCarousel extends React.Component {
   }
 
   render() {
-    // console.log("this.props inside render method of InnerCarousel: ", this.props);
-    let { listing } = this.props; 
-    console.log("listing.images.length: ", listing.images.length);
+    let { listing } = this.props;
     let { currentImageIndex } = this.state;
-    console.log("currentImageIndex: ", currentImageIndex);
-    console.log("result of getImageOffset: ", this.getImageOffset());
     return (
       <div className="innerCarouselComponent">
         <Animate translateX={this.getImageOffset()} tension={200} clamp>

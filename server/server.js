@@ -7,17 +7,24 @@ const bodyParser = require('body-parser');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    listingsDB.getAllListings()
-        .then((data) => {
-            res.status(200).json(data);
+
+app.get('/recommendations', (req, res) => {
+    const defaultRoomID = 0;
+    return listingsDB.getListingByID(defaultRoomID)
+        .then((result) => {
+            let location = result.location;
+            return listingsDB.getTwelve(location);
+        })
+        .then((result) => {
+            res.status(200).json(result);
         })
         .catch((err) => {
-            res.status(500).send('There was an error: ' + err);
+            res.status(500).send(err);
         });
 });
 
-app.get('/recommendations:roomID', (req, res) => {
+
+app.get('/:roomID?', (req, res) => {
     listingsDB.getTwelve(req.params.roomID)
         .then((data) => {
             res.status(200).json(data);

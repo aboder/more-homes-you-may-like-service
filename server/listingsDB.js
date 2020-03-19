@@ -13,6 +13,7 @@ db.once('open', () => {
 // create listingSchema
 // reminder: mongoose adds a '_id' property to every document (type: ObjectId);
 const listingSchema = new mongoose.Schema({
+  roomID: Number,
   images: [String],
   name: String,
   location: String,
@@ -34,6 +35,7 @@ const Listing = mongoose.model('Listing', listingSchema);
 // save method for a single listing
 const save = (data) => {
   const newListing = new Listing({
+    roomID: data.roomID,
     images: data.images,
     name: data.name,
     location: data.location,
@@ -61,30 +63,55 @@ const disconnect = () => {
 
 // method to fetch all listings
 const getAllListings = () => {
-  return Listing.find();
+  return Listing.find()
+    .catch((err) => {
+      console.log('There was an error retrieving all the listings')
+      throw err;
+    })
+    .then((result) => {
+      return result;
+    });
 };
 
+// delete all listings from database. Used before re-seeding.
 const deleteAllListings = () => {
-  let promise = Listing.deleteMany()
+  return Listing.deleteMany()
     .then(console.log("All listings deleted"))
     .catch((err) => {
       console.log("There was an error deleting all listings: ", err);
     });
-  return promise;
-}
+};
 
-// fetch all listings that share a location property with the roomID
-const getTwelve = (roomID) => {
-  let currentListing = Listing.findOne({_id: roomID});
-  let currentLocation = currentListing.location;
-  let promise = Listing.find({location: currentLocation}).limit(12);
-  return promise;
-}
 
+// get a listing by roomID
+const getListingByID = (roomID) => {
+  return Listing.findOne({"roomID": roomID})
+    .catch((err) => {
+      console.log('There was an error getting the listing by ID');
+      throw err;
+    })
+    .then((result) => {
+      return result;
+    })
+};
+
+
+// get all the listings with matching location parameter (limit 12)
+const getTwelve = (location) => {
+  return Listing.find({"location": location}).limit(12)
+    .catch((err) => {
+      console.log('There was an error finding 12 listings by location: ', err);
+    })
+    .then((result) => {
+      return result;
+    });
+};
 
 module.exports = {
   save,
   getAllListings,
   deleteAllListings,
-  disconnect
+  disconnect,
+  getTwelve,
+  getListingByID
 };

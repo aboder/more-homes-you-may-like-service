@@ -66,8 +66,9 @@ const deleteAllDatabaseEntries = () => {
 const seedDatabase = () => {
     let count = 00;
     let promises = [];
-    for (let i=0; count<20; i++) {
+    for (let i=0; count<100; i++) {
         let document = {
+            roomID: count,
             images: [`fakeImageURL/${count}`, `fakeImageURL/${count+200}`],
             title: `${faker.random.arrayElement(fakeTitles)}`,
             size: `${faker.random.number({min: 1, max: 5})} bedrooms`,

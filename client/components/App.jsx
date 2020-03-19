@@ -7,18 +7,20 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      listings: dummyData,
-      currentListingID: ''
+      listings: dummyData
     };
   };
 
   componentDidMount() {
-    this.getTwelveListings('00');
+    this.getTwelveListings(this.props.roomID);
   }
 
   getTwelveListings(roomID) {
     axios.get(`/recommendations/${roomID}`)
-  }
+      .then((response) => {
+        this.setState({listings: response.data});
+      });
+  };
 
   render() {
     const { listings } = this.state;

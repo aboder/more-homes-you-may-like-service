@@ -2,7 +2,9 @@
 
 exports[`This should be true It renders correctly 1`] = `
 <div>
-  More homes you may like
+  <h1>
+    More homes you may like
+  </h1>
   <div
     className="outerCarouselComponent"
   >
@@ -14,73 +16,247 @@ exports[`This should be true It renders correctly 1`] = `
       className="outerCarousel"
     >
       <div
-        className="slider"
+        className="itemSlider"
       >
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#bbaadd",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          0
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#bbddaa",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          1
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#aabbdd",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          2
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#aaddbb",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          3
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#ddbbaa",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          4
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
         <span
           className="outerCarouselItem"
-          style={
-            Object {
-              "background": "#ddaabb",
-            }
-          }
         >
-          Outer Carousel Item Number 
-          5
+          <div
+            className="innerCarouselComponent"
+          >
+            <div
+              className="innerCarouselSlider"
+            >
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+              <img
+                className="innerCarouselItem"
+                src="https://via.placeholder.com/335x320.png"
+              />
+            </div>
+            <div
+              className="leftImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="rightImageButton"
+              onClick={[Function]}
+            />
+            <div
+              className="heartButton"
+            />
+            <div
+              className="metaData"
+            >
+              METADATA
+            </div>
+          </div>
         </span>
       </div>
     </div>

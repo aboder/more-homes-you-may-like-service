@@ -17,7 +17,7 @@ class OuterCarousel extends React.Component {
 
   getOffset() {
     let { currentIndex } = this.state;
-    return currentIndex * -335;
+    return currentIndex * -345;
   }
 
   slideRight() {

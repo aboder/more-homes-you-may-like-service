@@ -68,9 +68,6 @@ class InnerCarousel extends React.Component {
         <div className="leftImageButton" onClick={this.clickHandlerLeft}></div>
         <div className="rightImageButton" onClick={this.clickHandlerRight}></div>
         <div className="heartButton"></div>
-        <div className="metaData">
-          METADATA
-        </div>
       </div>
     );
   };

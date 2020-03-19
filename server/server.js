@@ -13,11 +13,19 @@ app.get('/', (req, res) => {
             res.status(200).json(data);
         })
         .catch((err) => {
-            res.status(500).send("There was an error: " + err);
+            res.status(500).send('There was an error: ' + err);
         });
 });
 
-
+app.get('/recommendations:roomID', (req, res) => {
+    listingsDB.getTwelve(req.params.roomID)
+        .then((data) => {
+            res.status(200).json(data);
+        }) 
+        .catch((err) => {
+            res.status(500).send('There was an error: ' + err);
+        });
+});
 
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);

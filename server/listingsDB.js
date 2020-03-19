@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.promise = require('bluebird');
+mongoose.connect('mongodb://localhost:27017/listingFetcher', {useNewUrlParser: true});
 
-mongoose.connect('mongodb://localhost/listingFetcher');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
@@ -15,13 +15,17 @@ db.once('open', () => {
 const listingSchema = new mongoose.Schema({
   images: [String],
   name: String,
+  location: String,
   title: String,
   size: String,
   description: String,
   price: Number,
   reviewScore: Number,
   reviewCount: Number,
-});
+  },
+  // mongoose schema options:
+  {collection: 'listings'}
+);
 
 
 // create Listing model
@@ -32,6 +36,7 @@ const save = (data) => {
   const newListing = new Listing({
     images: data.images,
     name: data.name,
+    location: data.location,
     title: data.title,
     size: data.size,
     description: data.description,
@@ -43,14 +48,21 @@ const save = (data) => {
 
   const promise = newListing.save().then((result) => {
     console.log('saved result: ', result);
+    return result;
   }).catch((err) => {
     console.log('there was an error: ', err);
   });
   return promise;
 };
 
+const disconnect = () => {
+  return mongoose.disconnect();
+};
+
 // method to fetch all listings
-const getAllListings = () => Listing.find();
+const getAllListings = () => {
+  return Listing.find();
+};
 
 const deleteAllListings = () => {
   let promise = Listing.deleteMany()
@@ -61,8 +73,18 @@ const deleteAllListings = () => {
   return promise;
 }
 
+// fetch all listings that share a location property with the roomID
+const getTwelve = (roomID) => {
+  let currentListing = Listing.findOne({_id: roomID});
+  let currentLocation = currentListing.location;
+  let promise = Listing.find({location: currentLocation}).limit(12);
+  return promise;
+}
+
+
 module.exports = {
   save,
   getAllListings,
-  deleteAllListings
+  deleteAllListings,
+  disconnect
 };

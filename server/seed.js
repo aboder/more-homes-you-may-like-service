@@ -69,7 +69,7 @@ const seedDatabase = () => {
     for (let i=0; count<100; i++) {
         let document = {
             roomID: count,
-            images: [`fakeImageURL/${count}`, `fakeImageURL/${count+200}`],
+            images: [`${faker.image.imageUrl(335,290, "nature")}`, `${faker.image.imageUrl(335,290, "nature")}`],
             title: `${faker.random.arrayElement(fakeTitles)}`,
             size: `${faker.random.number({min: 1, max: 5})} bedrooms`,
             location: `${faker.random.arrayElement(locations)}`,

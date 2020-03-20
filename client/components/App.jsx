@@ -17,9 +17,9 @@ class App extends React.Component {
 
   getTwelveListings(roomID) {
     axios.get(`/recommendations/${roomID}`)
-      .then((response) => {
-        this.setState({listings: response.data});
-      });
+    .then((response) => {
+      this.setState({listings: response.data});
+    });
   };
 
   render() {

@@ -9,10 +9,13 @@ class InnerCarousel extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentImageIndex: 0
+      currentImageIndex: 0,
+      hovered: false
     };
     this.clickHandlerLeft = this.clickHandlerLeft.bind(this);
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
+    this.onHoverHandler = this.onHoverHandler.bind(this);
+    this.offHoverHandler = this.offHoverHandler.bind(this);
   };
 
   getImageOffset() {
@@ -42,6 +45,16 @@ class InnerCarousel extends React.Component {
     }
   }
 
+
+
+  onHoverHandler() {
+    this.setState({hovered: true});
+  }
+
+  offHoverHandler() {
+    this.setState({hovered: false});
+  }
+
   clickHandlerLeft() {
     this.slideImagesLeft();
   }
@@ -50,27 +63,42 @@ class InnerCarousel extends React.Component {
     this.slideImagesRight();
   }
 
+
   render() {
     let { listing } = this.props;
-    let { currentImageIndex } = this.state;
+    let { currentImageIndex, hovered } = this.state;
     return (
-      <div className="innerCarouselComponent">
+      <div className="innerCarouselComponent" onMouseEnter={this.onHoverHandler} onMouseLeave={this.offHoverHandler}>
         <Animate translateX={this.getImageOffset()} tension={200} clamp>
           <div className="innerCarouselSlider">
             {_.map(listing.images, (image, index) => (
               <InnerCarouselItem 
                 index={index}
                 image={image}
-                key={JSON.stringify(index)} />
+                key={JSON.stringify(index)} 
+              />
             ))}
           </div>
         </Animate>
-        <div className="leftImageButton" onClick={this.clickHandlerLeft}></div>
-        <div className="rightImageButton" onClick={this.clickHandlerRight}></div>
-        <div className="heartButton"></div>
+        <Animate opacity={hovered ? 1 : 0}>
+          <div className="leftImageButton" onClick={this.clickHandlerLeft}>
+            <div className="gg-arrow-left-o"></div>
+          </div>
+        </Animate>
+        <Animate opacity={hovered ? 1 : 0}>
+          <div className="rightImageButton" onClick={this.clickHandlerRight}>
+            <div className="gg-arrow-right-o"></div>
+          </div>
+        </Animate>
+        <Animate opacity={hovered ? 1 : 0}>
+          <div className="heartButtonDiv" style={{backgroundImage: `url("/heart.png")`}}>
+          </div>
+        </Animate>
       </div>
     );
   };
 };
+
+// style={{backgroundImage: 'url("/previous.png")'}
 
 export default InnerCarousel;

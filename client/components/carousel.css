@@ -1,4 +1,5 @@
 
+
 .outerCarouselItemBuffer {
   padding: 5px;
 }
@@ -60,6 +61,14 @@
 }
 
 /**** innerCarousel ****/
+:root {
+  --ggs: 1.4;
+}
+
+
+@import url('https://css.gg/arrow-left-o.css');
+@import url('https://css.gg/arrow-right-o.css');
+
 
 .innerCarouselComponent {
   overflow: hidden;
@@ -79,48 +88,95 @@
   position: relative;
 }
 
-.innerCarouselItem {
-  overflow: hidden;
-  display: inline-block;
-  width: 335px;
-  height: 290px;
-}
-
 .imageSlider {
   display: flex;
   align-content: flex-start;
   align-items: center;
 }
 
-.leftImageButton {
-  position: absolute;
-  left: 0;
-  padding: 10px;
-  font-size: 30px;
+.innerCarouselItem {
+  overflow: hidden;
+  display: inline-block;
+  width: 335px;
+  height: 290px;
+  background-size: cover;
+  background-position: center;
 }
 
-.leftImageButton::after {
-  content: "⇦";
+.leftImageButton {
+  position: absolute;
+  left: 0px;
+  padding: 15px;
+  /* font-size: 50px; */
+  color: white;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
 }
+
 
 .rightImageButton {
   position: absolute;
   right: 0;
   padding: 10px;
   font-size: 30px;
+  color: white;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
 }
 
-.rightImageButton::after {
-  content: "⇨";
+.heartButtonDiv {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
+  opacity: 0;
+  background-position: center;
+  background-size: cover;
 }
 
 .heartButton {
   position: absolute;
-  right: 0;
-  top: 0;
-  padding: 10px;
+  background-position: center;
+  background-size: cover;
 }
 
-.heartButton::after {
+/* .heartButtonDiv::after {
   content: 'heart'
+} */
+
+/* .heart {
+  background-color: red;
+  height: 30px;
+  transform: rotate(-45deg);
+  width: 30px;
 }
+
+.heart:before {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+  
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  bottom: 15px;
+  right: 0;
+} */

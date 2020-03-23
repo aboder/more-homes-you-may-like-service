@@ -75,12 +75,12 @@ class InnerCarousel extends React.Component {
       <div 
         className="rec-innerCarouselComponent" 
         onMouseEnter={this.onHoverHandler}
-        onMouseLeave={this.offHoverHandler}
-        onClick={this.clickHandlerNewListing}>
+        onMouseLeave={this.offHoverHandler}>
         <Animate translateX={this.getImageOffset()} tension={200} clamp>
           <div className="rec-innerCarouselSlider">
             {_.map(listing.images, (image, index) => (
               <InnerCarouselItem 
+                clickHandlerNewListing={this.clickHandlerNewListing}
                 index={index}
                 image={image}
                 key={JSON.stringify(index)} 

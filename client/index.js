@@ -8,4 +8,4 @@ if (roomId === null) {
   roomId = 0;
 };
 
-ReactDOM.render(<App roomIs={roomId}/>, document.getElementById('recommendations'));
+ReactDOM.render(<App roomId={roomId}/>, document.getElementById('recommendations'));

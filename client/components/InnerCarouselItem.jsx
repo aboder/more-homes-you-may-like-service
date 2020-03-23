@@ -7,14 +7,13 @@ class InnerCarouselItem extends React.Component {
     super(props);
   }
 
-
-
   render() {
-    const { image, onHover, offHover } = this.props;
+    const { image, clickHandlerNewListing, onHover, offHover } = this.props;
     return (
       <div 
         className="rec-innerCarouselItem"
         style={{backgroundImage: `url("${image}")`}}
+        onClick={clickHandlerNewListing}
       >
       </div>
     );

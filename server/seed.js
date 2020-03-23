@@ -72,7 +72,7 @@ const seedDatabase = () => {
     let promises = [];
     for (let i=0; count<100; i++) {
         let document = {
-            roomID: count,
+            roomId: count,
             images: _.map([0,1,2,3], () => {
                 imageCount++;
                 return `https://air-tree-n-tree-images.s3.us-east-2.amazonaws.com/treeHouseImage_${imageCount % 120}.jpg`;

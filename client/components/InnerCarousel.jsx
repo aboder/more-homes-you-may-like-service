@@ -16,6 +16,7 @@ class InnerCarousel extends React.Component {
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
     this.onHoverHandler = this.onHoverHandler.bind(this);
     this.offHoverHandler = this.offHoverHandler.bind(this);
+    this.clickHandlerNewListing = this.clickHandlerNewListing.bind(this);
   };
 
   getImageOffset() {
@@ -45,7 +46,10 @@ class InnerCarousel extends React.Component {
     }
   }
 
-
+  clickHandlerNewListing() {
+    console.log('picture clicked');
+    // fire event that renders a new page
+  }
 
   onHoverHandler() {
     this.setState({hovered: true});
@@ -65,12 +69,16 @@ class InnerCarousel extends React.Component {
 
 
   render() {
-    let { listing } = this.props;
+    let { listing, clickHandlerNewListing } = this.props;
     let { currentImageIndex, hovered } = this.state;
     return (
-      <div className="innerCarouselComponent" onMouseEnter={this.onHoverHandler} onMouseLeave={this.offHoverHandler}>
+      <div 
+        className="rec-innerCarouselComponent" 
+        onMouseEnter={this.onHoverHandler}
+        onMouseLeave={this.offHoverHandler}
+        onClick={this.clickHandlerNewListing}>
         <Animate translateX={this.getImageOffset()} tension={200} clamp>
-          <div className="innerCarouselSlider">
+          <div className="rec-innerCarouselSlider">
             {_.map(listing.images, (image, index) => (
               <InnerCarouselItem 
                 index={index}
@@ -81,17 +89,17 @@ class InnerCarousel extends React.Component {
           </div>
         </Animate>
         <Animate opacity={hovered ? 1 : 0}>
-          <div className="leftImageButton" onClick={this.clickHandlerLeft}>
+          <div className="rec-leftImageButton" onClick={this.clickHandlerLeft}>
             <div className="gg-arrow-left-o"></div>
           </div>
         </Animate>
         <Animate opacity={hovered ? 1 : 0}>
-          <div className="rightImageButton" onClick={this.clickHandlerRight}>
+          <div className="rec-rightImageButton" onClick={this.clickHandlerRight}>
             <div className="gg-arrow-right-o"></div>
           </div>
         </Animate>
         <Animate opacity={hovered ? 1 : 0}>
-          <div className="heartButtonDiv" style={{backgroundImage: `url("/heart.png")`}}>
+          <div className="rec-heartButtonDiv" style={{backgroundImage: `url("/heart.png")`}}>
           </div>
         </Animate>
       </div>

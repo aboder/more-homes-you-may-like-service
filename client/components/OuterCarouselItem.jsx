@@ -11,17 +11,17 @@ class OuterCarouselItem extends React.Component {
   render() {
     const { listing } = this.props;
     return (
-      <div className="outerCarouselItemBuffer">
-        <span className="outerCarouselItem">
+      <div className="rec-outerCarouselItemBuffer">
+        <span className="rec-outerCarouselItem">
           <InnerCarousel listing={listing} />
         </span>
-        <div className="metaData">
-          <div className="metaDataTopLine">
-            <div className="listingSize">{listing.size}</div>
-            <div className="listingReviewScore">{(listing.reviewScore/10).toFixed(1)} ({listing.reviewCount})</div>
+        <div className="rec-metaData">
+          <div className="rec-metaDataTopLine">
+            <div className="rec-listingSize">{listing.size}</div>
+            <div className="rec-listingReviewScore">{(listing.reviewScore/10).toFixed(1)} ({listing.reviewCount})</div>
           </div>
-          <div className="listingDescription">{listing.description}</div>
-          <div className="listingPrice">${listing.price}/night</div>
+          <div className="rec-listingDescription">{listing.description}</div>
+          <div className="rec-listingPrice">${listing.price}/night</div>
         </div>
       </div>
     );

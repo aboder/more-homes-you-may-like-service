@@ -8,12 +8,12 @@ class InnerCarouselItem extends React.Component {
   }
 
 
-// <div className="image" style={{backgroundImage: `url("${image}")`}}></div>
+
   render() {
     const { image, onHover, offHover } = this.props;
     return (
       <div 
-        className="innerCarouselItem"
+        className="rec-innerCarouselItem"
         style={{backgroundImage: `url("${image}")`}}
       >
       </div>

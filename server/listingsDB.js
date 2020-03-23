@@ -13,7 +13,7 @@ db.once('open', () => {
 // create listingSchema
 // reminder: mongoose adds a '_id' property to every document (type: ObjectId);
 const listingSchema = new mongoose.Schema({
-  roomID: Number,
+  roomId: Number,
   images: [String],
   name: String,
   location: String,
@@ -35,7 +35,7 @@ const Listing = mongoose.model('Listing', listingSchema);
 // save method for a single listing
 const save = (data) => {
   const newListing = new Listing({
-    roomID: data.roomID,
+    roomId: data.roomId,
     images: data.images,
     name: data.name,
     location: data.location,
@@ -85,10 +85,9 @@ const deleteAllListings = () => {
     });
 };
 
-
-// get a listing by roomID
-const getListingByID = (roomID) => {
-  return Listing.findOne({"roomID": roomID})
+// get a listing by roomId
+const getListingByID = (roomId) => {
+  return Listing.findOne({"roomId": roomId})
     .catch((err) => {
       console.log('There was an error getting the listing by ID');
       throw err;
@@ -97,7 +96,6 @@ const getListingByID = (roomID) => {
       return result;
     })
 };
-
 
 // get all the listings with matching location parameter (limit 12)
 const getTwelve = (location) => {

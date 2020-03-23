@@ -52,11 +52,11 @@ class OuterCarousel extends React.Component {
     let { currentIndex } = this.state;
     let { listings } = this.props;
     return (
-      <div className="outerCarouselComponent">
-        <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
-          <div className="outerCarousel">
+      <div className="rec-outerCarouselComponent">
+        <div className="rec-outerLeftButton" onClick={this.clickHandlerLeft}></div>
+          <div className="rec-outerCarousel">
             <Animate translateX={this.getOffset()} tension={200} clamp>
-              <div className="itemSlider">
+              <div className="rec-itemSlider">
                 {_.map(listings, (listing, index) => (
                   <OuterCarouselItem 
                     currentIndex={currentIndex}
@@ -68,7 +68,7 @@ class OuterCarousel extends React.Component {
               </div>
             </Animate>
           </div>
-        <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
+        <div className="rec-outerRightButton" onClick={this.clickHandlerRight}></div>
       </div>
     );
   };

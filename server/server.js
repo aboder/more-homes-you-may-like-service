@@ -23,8 +23,8 @@ app.get('/recommendations', (req, res) => {
 });
 
 
-app.get('/recommendations/:roomID', (req, res) => {
-    return listingsDB.getListingByID(req.params.roomID)
+app.get('/recommendations/:roomId', (req, res) => {
+    return listingsDB.getListingByID(req.params.roomId)
     .then((result) => {
         let location = result.location;
         return listingsDB.getTwelve(location);

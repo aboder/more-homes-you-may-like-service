@@ -4,6 +4,7 @@
   "description": "React => Axios => Express => Mongoose => Mongo",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "css-loader": "^3.4.2",
@@ -29,6 +30,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-mocha": "^6.3.0",
+    "faker": "^4.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
     "lorem-ipsum": "^2.0.3",

@@ -1,14 +1,19 @@
+
+.outerCarouselItemBuffer {
+  padding: 5px;
+}
+
 .outerCarouselComponent {
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .outerCarousel {
   border: 3px solid black;
   display: flex;  
   overflow: hidden;
-  width: 1005px;
+  width: 1035px;
 }
 
 .itemSlider {
@@ -24,21 +29,35 @@
 }
 
 .outerLeftButton {
+  display: flex;
+  align-items: center;
   font-size: 100px;
+  height: 300px;
+}
+
+.outerRightButton {
+  display: flex;
+  align-items: center;
+  font-size: 100px;
+  height: 300px;
 }
 
 .outerLeftButton::after {
   content: "⇦";
 }
 
-.outerRightButton {
-  font-size: 100px;
-}
-
 .outerRightButton::after {
   content: "⇨";
 }
 
+.metaDataTopLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metaData {
+  padding: 2px;
+}
 
 /**** innerCarousel ****/
 
@@ -64,7 +83,7 @@
   overflow: hidden;
   display: inline-block;
   width: 335px;
-  height: 320px;
+  height: 290px;
 }
 
 .imageSlider {

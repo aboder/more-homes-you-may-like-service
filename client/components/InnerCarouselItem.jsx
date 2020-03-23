@@ -8,7 +8,7 @@ class InnerCarouselItem extends React.Component {
 
   render() {
     return (
-      <img className="innerCarouselItem" src="https://via.placeholder.com/335x320.png"></img>
+      <img className="innerCarouselItem" src="https://via.placeholder.com/335x290.png"></img>
     );
   };
 };

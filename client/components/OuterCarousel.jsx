@@ -17,7 +17,7 @@ class OuterCarousel extends React.Component {
 
   getOffset() {
     let { currentIndex } = this.state;
-    return currentIndex * -335;
+    return currentIndex * -345;
   }
 
   slideRight() {
@@ -51,7 +51,6 @@ class OuterCarousel extends React.Component {
   render() {
     let { currentIndex } = this.state;
     let { listings } = this.props;
-    // console.log("current component index: ", currentIndex);
     return (
       <div className="outerCarouselComponent">
           <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
@@ -63,7 +62,8 @@ class OuterCarousel extends React.Component {
                       currentIndex={currentIndex}
                       listing={listing} 
                       key={JSON.stringify(index)} 
-                      index={index} />
+                      index={index} 
+                    />
                   ))}
                 </div>
               </Animate>

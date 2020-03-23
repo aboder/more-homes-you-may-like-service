@@ -1,14 +1,22 @@
 import React from 'react';
 import './carousel.css';
+import { urlencoded } from 'body-parser';
 
 class InnerCarouselItem extends React.Component {
   constructor(props) {
     super(props);
   }
 
+
+// <div className="image" style={{backgroundImage: `url("${image}")`}}></div>
   render() {
+    const { image, onHover, offHover } = this.props;
     return (
-      <img className="innerCarouselItem" src="https://via.placeholder.com/335x290.png"></img>
+      <div 
+        className="innerCarouselItem"
+        style={{backgroundImage: `url("${image}")`}}
+      >
+      </div>
     );
   };
 };

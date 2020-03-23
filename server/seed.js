@@ -63,13 +63,20 @@ const deleteAllDatabaseEntries = () => {
         });
 };
 
+// https://air-tree-n-tree-images.s3.us-east-2.amazonaws.com/treeHouseImage_107.jpg
+const _ = require('underscore');
+
 const seedDatabase = () => {
+    let imageCount = 0;
     let count = 00;
     let promises = [];
     for (let i=0; count<100; i++) {
         let document = {
             roomID: count,
-            images: [`fakeImageURL/${count}`, `fakeImageURL/${count+200}`],
+            images: _.map([0,1,2,3], () => {
+                imageCount++;
+                return `https://air-tree-n-tree-images.s3.us-east-2.amazonaws.com/treeHouseImage_${imageCount % 120}.jpg`;
+            }),
             title: `${faker.random.arrayElement(fakeTitles)}`,
             size: `${faker.random.number({min: 1, max: 5})} bedrooms`,
             location: `${faker.random.arrayElement(locations)}`,

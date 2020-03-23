@@ -10,16 +10,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/recommendations', (req, res) => {
     return listingsDB.getListingByID(0)
-        .then((result) => {
-            let location = result.location;
-            return listingsDB.getTwelve(location);
-        })
-        .then((result) => {
-            res.status(200).json(result);
-        })
-        .catch((err) => {
-            res.status(500).send(err);
-        });
+    .then((result) => {
+        let location = result.location;
+        return listingsDB.getTwelve(location);
+    })
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    });
 });
 
 

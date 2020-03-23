@@ -53,22 +53,22 @@ class OuterCarousel extends React.Component {
     let { listings } = this.props;
     return (
       <div className="outerCarouselComponent">
-          <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
-            <div className="outerCarousel">
-              <Animate translateX={this.getOffset()} tension={200} clamp>
-                <div className="itemSlider">
-                  {_.map(listings, (listing, index) => (
-                    <OuterCarouselItem 
-                      currentIndex={currentIndex}
-                      listing={listing} 
-                      key={JSON.stringify(index)} 
-                      index={index} 
-                    />
-                  ))}
-                </div>
-              </Animate>
-            </div>
-          <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
+        <div className="outerLeftButton" onClick={this.clickHandlerLeft}></div>
+          <div className="outerCarousel">
+            <Animate translateX={this.getOffset()} tension={200} clamp>
+              <div className="itemSlider">
+                {_.map(listings, (listing, index) => (
+                  <OuterCarouselItem 
+                    currentIndex={currentIndex}
+                    listing={listing} 
+                    key={JSON.stringify(index)} 
+                    index={index} 
+                  />
+                ))}
+              </div>
+            </Animate>
+          </div>
+        <div className="outerRightButton" onClick={this.clickHandlerRight}></div>
       </div>
     );
   };

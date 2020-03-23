@@ -3,11 +3,12 @@ import OuterCarousel from './OuterCarousel.jsx';
 import dummyData from './dummyData.js';
 const axios = require('axios');
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      listings: dummyData
+      listings: []
     };
   };
 
@@ -17,9 +18,9 @@ class App extends React.Component {
 
   getTwelveListings(roomID) {
     axios.get(`/recommendations/${roomID}`)
-      .then((response) => {
-        this.setState({listings: response.data});
-      });
+    .then((response) => {
+      this.setState({listings: response.data});
+    });
   };
 
   render() {
@@ -27,7 +28,7 @@ class App extends React.Component {
     console.log('dummyData: ', dummyData);
     return (
     <div>
-      <h1>More homes you may like</h1>
+      <h2 className="rec-h2-title">More homes you may like</h2>
       <OuterCarousel listings={listings}/>
     </div>
     );

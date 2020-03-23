@@ -49,12 +49,15 @@ const save = (data) => {
 
 
 
-  const p = newListing.save().then((result) => {
-    console.log('saved result: ', result);
-    return result;
-  }).catch((err) => {
-    console.log('there was an error: ', err);
-  });
+  const promise = newListing.save()
+    .then((result) => {
+      console.log('saved result: ', result);
+      return result;
+    })
+    .catch((err) => {
+      console.log('there was an error: ', err);
+    });
+    
   return promise;
 };
 

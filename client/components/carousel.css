@@ -3,63 +3,63 @@
   align-self: center;
 }
 
-.outerCarouselItemBuffer {
+.rec-outerCarouselItemBuffer {
   padding: 5px;
 }
 
-.outerCarouselComponent {
+.rec-outerCarouselComponent {
   overflow: hidden;
   display: flex;
   align-items: flex-start;
 }
 
-.outerCarousel {
+.rec-outerCarousel {
   border: 3px solid black;
   display: flex;  
   overflow: hidden;
   width: 1035px;
 }
 
-.itemSlider {
+.rec-itemSlider {
   display: flex;
   align-content: flex-start;
 }
 
-.outerCarouselItem {
+.rec-outerCarouselItem {
   display: inline-block;
   width: 335px;
   height: 320px;
   flex-shrink: 0;
 }
 
-.outerLeftButton {
+.rec-outerLeftButton {
   display: flex;
   align-items: center;
   font-size: 100px;
   height: 300px;
 }
 
-.outerRightButton {
+.rec-outerRightButton {
   display: flex;
   align-items: center;
   font-size: 100px;
   height: 300px;
 }
 
-.outerLeftButton::after {
+.rec-outerLeftButton::after {
   content: "⇦";
 }
 
-.outerRightButton::after {
+.rec-outerRightButton::after {
   content: "⇨";
 }
 
-.metaDataTopLine {
+.rec-metaDataTopLine {
   display: flex;
   justify-content: space-between;
 }
 
-.metaData {
+.rec-metaData {
   padding: 2px;
 }
 
@@ -73,31 +73,31 @@
 @import url('https://css.gg/arrow-right-o.css');
 
 
-.innerCarouselComponent {
+.rec-innerCarouselComponent {
   overflow: hidden;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.listingWrapper {
+.rec-listingWrapper {
   display: flex;
   position: relative;
 }
 
-.innerCarouselSlider {
+.rec-innerCarouselSlider {
   display: flex;
   align-content: flex-start;
   position: relative;
 }
 
-.imageSlider {
+.rec-imageSlider {
   display: flex;
   align-content: flex-start;
   align-items: center;
 }
 
-.innerCarouselItem {
+.rec-innerCarouselItem {
   overflow: hidden;
   display: inline-block;
   width: 335px;
@@ -106,7 +106,7 @@
   background-position: center;
 }
 
-.leftImageButton {
+.rec-leftImageButton {
   position: absolute;
   left: 0px;
   padding: 15px;
@@ -118,7 +118,7 @@
 }
 
 
-.rightImageButton {
+.rec-rightImageButton {
   position: absolute;
   right: 0;
   padding: 10px;
@@ -129,7 +129,7 @@
   background-position: center;
 }
 
-.heartButtonDiv {
+.rec-heartButtonDiv {
   position: absolute;
   right: 0;
   top: 0;
@@ -139,47 +139,8 @@
   background-size: cover;
 }
 
-.heartButton {
+.rec-heartButton {
   position: absolute;
   background-position: center;
   background-size: cover;
 }
-
-/* .heartButtonDiv::after {
-  content: 'heart'
-} */
-
-/* .heart {
-  background-color: red;
-  height: 30px;
-  transform: rotate(-45deg);
-  width: 30px;
-}
-
-.heart:before {
-  content: "";
-  background-color: red;
-  border-radius: 50%;
-  height: 30px;
-  position: absolute;
-  width: 30px;
-}
-
-.heart:after {
-  content: "";
-  background-color: red;
-  border-radius: 50%;
-  height: 30px;
-  position: absolute;
-  width: 30px;
-}
-  
-.heart:before {
-  top: -15px;
-  left: 0;
-}
-
-.heart:after {
-  bottom: 15px;
-  right: 0;
-} */

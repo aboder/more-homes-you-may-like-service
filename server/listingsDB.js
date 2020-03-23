@@ -48,6 +48,7 @@ const save = (data) => {
   });
 
 
+
   const promise = newListing.save()
     .then((result) => {
       console.log('saved result: ', result);

@@ -14,7 +14,8 @@ class InnerCarouselItem extends React.Component {
     return (
       <div 
         className="innerCarouselItem"
-        style={{backgroundImage: `url("${image}")`}}>
+        style={{backgroundImage: `url("${image}")`}}
+      >
       </div>
     );
   };

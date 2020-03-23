@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      listings: dummyData
+      listings: []
     };
   };
 
@@ -28,7 +28,7 @@ class App extends React.Component {
     console.log('dummyData: ', dummyData);
     return (
     <div>
-      <h1>More homes you may like</h1>
+      <h2 className="rec-h2-title">More homes you may like</h2>
       <OuterCarousel listings={listings}/>
     </div>
     );

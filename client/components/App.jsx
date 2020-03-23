@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      roomId: null,
       listings: []
     };
   };
@@ -19,7 +20,10 @@ class App extends React.Component {
   getTwelveListings(roomId) {
     axios.get(`/recommendations/${roomId}`)
     .then((response) => {
-      this.setState({listings: response.data});
+      this.setState({
+        roomId: roomId,
+        listings: response.data
+      });
     });
   };
 

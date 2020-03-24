@@ -8,14 +8,15 @@ class InnerCarouselItem extends React.Component {
   }
 
   render() {
-    const { image, clickHandlerNewListing, onHover, offHover } = this.props;
+    const { listing, image, clickHandlerNewListing, onHover, offHover } = this.props;
     return (
-      <div 
-        className="rec-innerCarouselItem"
-        style={{backgroundImage: `url("${image}")`}}
-        onClick={clickHandlerNewListing}
-      >
-      </div>
+      <a href={`/?roomId=${listing.roomId}`} className="pictureAnchor">
+        <div 
+          className="rec-innerCarouselItem"
+          style={{backgroundImage: `url("${image}")`}}
+          onClick={clickHandlerNewListing}>
+        </div>
+      </a>
     );
   };
 };

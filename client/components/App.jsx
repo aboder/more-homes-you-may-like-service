@@ -1,6 +1,5 @@
 import React from 'react';
 import OuterCarousel from './OuterCarousel.jsx';
-// import dummyData from './dummyData.js';
 const axios = require('axios');
 
 
@@ -11,6 +10,7 @@ class App extends React.Component {
       roomId: null,
       listings: []
     };
+    this.getTwelveListings = this.getTwelveListings.bind(this);
   };
 
   componentDidMount() {
@@ -18,6 +18,7 @@ class App extends React.Component {
   }
 
   getTwelveListings(roomId) {
+    console.log("roomId passed to getTwelveListings: ", roomId);
     axios.get(`/recommendations/${roomId}`)
     .then((response) => {
       this.setState({
@@ -32,7 +33,7 @@ class App extends React.Component {
     return (
     <div>
       <h2 className="rec-h2-title">More homes you may like</h2>
-      <OuterCarousel listings={listings}/>
+      <OuterCarousel listings={listings} getTwelveListings={this.getTwelveListings}/>
     </div>
     );
   };

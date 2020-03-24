@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/listingFetcher', {useNewUrlParser: true});
-
+const _ = require('underscore');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
@@ -104,7 +104,7 @@ const getTwelve = (location) => {
       console.log('There was an error finding 12 listings by location: ', err);
     })
     .then((result) => {
-      return result;
+      return _.shuffle(result);
     });
 };
 

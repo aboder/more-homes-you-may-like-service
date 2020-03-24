@@ -16,7 +16,6 @@ class InnerCarousel extends React.Component {
     this.clickHandlerRight = this.clickHandlerRight.bind(this);
     this.onHoverHandler = this.onHoverHandler.bind(this);
     this.offHoverHandler = this.offHoverHandler.bind(this);
-    this.clickHandlerNewListing = this.clickHandlerNewListing.bind(this);
   };
 
   getImageOffset() {
@@ -46,11 +45,6 @@ class InnerCarousel extends React.Component {
     }
   }
 
-  clickHandlerNewListing() {
-    console.log('picture clicked');
-    // fire event that renders a new page
-  }
-
   onHoverHandler() {
     this.setState({hovered: true});
   }
@@ -77,10 +71,10 @@ class InnerCarousel extends React.Component {
         onMouseEnter={this.onHoverHandler}
         onMouseLeave={this.offHoverHandler}>
         <Animate translateX={this.getImageOffset()} tension={200} clamp>
-          <div className="rec-innerCarouselSlider">
+          <div className="rec-innerCarouselSlider" onClick={this.clickHandlerNewListing}>
             {_.map(listing.images, (image, index) => (
-              <InnerCarouselItem 
-                clickHandlerNewListing={this.clickHandlerNewListing}
+              <InnerCarouselItem
+                listing={listing}
                 index={index}
                 image={image}
                 key={JSON.stringify(index)} 
